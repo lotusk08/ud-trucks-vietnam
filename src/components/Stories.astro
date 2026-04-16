@@ -1,0 +1,279 @@
+---
+---
+
+<section id="stories" class="stories-section">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <p class="section-label">REAL EXPERIENCES</p>
+      <h2>Stories from the Road</h2>
+      <p class="section-description">
+        Discover how UD Trucks helps businesses across Vietnam achieve their goals.
+      </p>
+    </div>
+
+    <div class="stories-grid">
+      <!-- Story 1 -->
+      <article class="story-card" data-animate="left">
+        <div class="story-image">
+          <img src="/story-logistics.jpg" alt="Logistics operations with UD Trucks" />
+          <div class="story-overlay">
+            <a href="#" class="story-link">Read Story</a>
+          </div>
+        </div>
+        <div class="story-content">
+          <span class="story-tag">Logistics</span>
+          <h3>Optimizing Supply Chain Efficiency</h3>
+          <p>
+            How a Ho Chi Minh City logistics company increased throughput by 30% using UD Trucks' reliable fleet management.
+          </p>
+          <div class="story-meta">
+            <span class="reading-time">5 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Story 2 -->
+      <article class="story-card" data-animate>
+        <div class="story-image">
+          <img src="/story-delivery.jpg" alt="Successful delivery operations" />
+          <div class="story-overlay">
+            <a href="#" class="story-link">Read Story</a>
+          </div>
+        </div>
+        <div class="story-content">
+          <span class="story-tag">Success</span>
+          <h3>Last-Mile Delivery Excellence</h3>
+          <p>
+            A Hanoi-based distribution company delivers on time, every time, thanks to UD Trucks' unmatched reliability.
+          </p>
+          <div class="story-meta">
+            <span class="reading-time">4 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Story 3 -->
+      <article class="story-card" data-animate="right">
+        <div class="story-image">
+          <img src="/story-road.jpg" alt="UD Truck on Vietnam highway" />
+          <div class="story-overlay">
+            <a href="#" class="story-link">Read Story</a>
+          </div>
+        </div>
+        <div class="story-content">
+          <span class="story-tag">Operations</span>
+          <h3>Long-Haul Performance in the Mekong</h3>
+          <p>
+            Multi-day routes through Vietnam's toughest terrain are no challenge for UD Trucks' advanced engineering.
+          </p>
+          <div class="story-meta">
+            <span class="reading-time">6 min read</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="stories-cta" data-animate>
+      <p>Interested in sharing your UD Trucks story?</p>
+      <a href="#contact" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stories-section {
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stories-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+  }
+
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .story-card {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .story-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-10px);
+  }
+
+  .story-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  }
+
+  .story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .story-card:hover .story-image img {
+    transform: scale(1.1);
+  }
+
+  .story-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 15, 15, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .story-card:hover .story-overlay {
+    opacity: 1;
+  }
+
+  .story-link {
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--accent);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .story-link:hover {
+    background: var(--accent);
+    color: var(--text-dark);
+  }
+
+  .story-content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .story-tag {
+    display: inline-block;
+    background: rgba(255, 107, 53, 0.15);
+    color: var(--accent);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    width: fit-content;
+    margin-bottom: 1rem;
+  }
+
+  .story-content h3 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-serif);
+    line-height: 1.3;
+  }
+
+  .story-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .story-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .reading-time::before {
+    content: '📖 ';
+  }
+
+  .stories-cta {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, transparent 100%);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .stories-cta p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .stories-section {
+      padding: 4rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .stories-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .story-image {
+      height: 200px;
+    }
+
+    .story-content {
+      padding: 1.5rem;
+    }
+
+    .story-content h3 {
+      font-size: 1.25rem;
+    }
+  }
+</style>

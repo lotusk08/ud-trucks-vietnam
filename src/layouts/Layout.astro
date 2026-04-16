@@ -1,0 +1,101 @@
+---
+import '../styles/globals.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'UD Trucks Vietnam', description = 'Premium truck solutions for Vietnam market' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    
+    <!-- Preconnect to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <slot />
+    
+    <script>
+      // Add smooth scroll behavior
+      document.documentElement.style.scrollBehavior = 'smooth';
+      
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('[data-animate]').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
+
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      [data-animate] {
+        opacity: 0;
+      }
+
+      [data-animate].animate-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+
+      [data-animate*="left"].animate-in {
+        animation: slideInLeft 0.8s ease-out forwards;
+      }
+
+      [data-animate*="right"].animate-in {
+        animation: slideInRight 0.8s ease-out forwards;
+      }
+    </style>
+  </body>
+</html>

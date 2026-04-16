@@ -1,0 +1,353 @@
+---
+---
+
+<section id="trucks" class="trucks-section">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <p class="section-label">OUR LINEUP</p>
+      <h2>Premium Trucks for Every Need</h2>
+      <p class="section-description">
+        From light-duty to heavy-duty operations, UD Trucks delivers the reliability and performance you demand.
+      </p>
+    </div>
+
+    <div class="trucks-carousel">
+      <div class="carousel-inner" id="carouselInner">
+        <!-- Truck 1: Quester -->
+        <div class="truck-card" data-animate="left">
+          <div class="truck-image">
+            <img src="/truck-quester.jpg" alt="UD Trucks Quester - Heavy Duty Truck" />
+          </div>
+          <div class="truck-info">
+            <h3>Quester</h3>
+            <p class="truck-subtitle">Heavy-Duty Power</p>
+            <p class="truck-description">
+              Maximum payload capacity and durability. Built for long hauls and heavy loads across challenging terrain.
+            </p>
+            <ul class="truck-features">
+              <li>Up to 40 tons GVW</li>
+              <li>Advanced cooling system</li>
+              <li>Fuel-efficient engines</li>
+              <li>Extended warranty</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Truck 2: Croner -->
+        <div class="truck-card" data-animate="right">
+          <div class="truck-image">
+            <img src="/truck-croner.jpg" alt="UD Trucks Croner - Medium Duty Truck" />
+          </div>
+          <div class="truck-info">
+            <h3>Croner</h3>
+            <p class="truck-subtitle">Versatile Performer</p>
+            <p class="truck-description">
+              Perfect balance of power and maneuverability. Ideal for distribution and mid-range operations.
+            </p>
+            <ul class="truck-features">
+              <li>20-25 tons GVW</li>
+              <li>Enhanced comfort cab</li>
+              <li>Lower operating costs</li>
+              <li>Quick servicing</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Truck 3: Condor -->
+        <div class="truck-card" data-animate="left">
+          <div class="truck-image">
+            <img src="/truck-condor.jpg" alt="UD Trucks Condor - Light Duty Truck" />
+          </div>
+          <div class="truck-info">
+            <h3>Condor</h3>
+            <p class="truck-subtitle">Efficient & Nimble</p>
+            <p class="truck-description">
+              Compact yet powerful for city deliveries and light commercial operations. Maximum efficiency.
+            </p>
+            <ul class="truck-features">
+              <li>6-12 tons capacity</li>
+              <li>Superior maneuverability</li>
+              <li>Economical fuel consumption</li>
+              <li>Modern safety features</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" id="prevBtn" aria-label="Previous truck">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn next" id="nextBtn" aria-label="Next truck">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  let currentIndex = 0;
+  const cards = document.querySelectorAll('.truck-card');
+  const carouselInner = document.getElementById('carouselInner');
+  const dotsContainer = document.getElementById('carouselDots');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  // Create dots
+  cards.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.className = `dot ${index === 0 ? 'active' : ''}`;
+    dot.setAttribute('aria-label', `Go to truck ${index + 1}`);
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+  });
+
+  function updateCarousel() {
+    const offset = -currentIndex * 100;
+    carouselInner.style.transform = `translateX(${offset}%)`;
+
+    // Update dots
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateCarousel();
+  }
+
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
+
+  // Auto-advance carousel every 8 seconds
+  setInterval(nextSlide, 8000);
+</script>
+
+<style>
+  .trucks-section {
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    position: relative;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-label {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+  }
+
+  .trucks-carousel {
+    position: relative;
+  }
+
+  .carousel-inner {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: 2rem;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .truck-card {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .truck-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.1);
+    transform: translateY(-5px);
+  }
+
+  .truck-image {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .truck-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .truck-card:hover .truck-image img {
+    transform: scale(1.05);
+  }
+
+  .truck-info {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .truck-info h3 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-serif);
+  }
+
+  .truck-subtitle {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .truck-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .truck-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .truck-features li {
+    color: var(--text-secondary);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .truck-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .carousel-btn {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .carousel-btn:hover {
+    background: var(--accent);
+    color: var(--text-dark);
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    background: var(--accent);
+  }
+
+  @media (max-width: 1024px) {
+    .carousel-inner {
+      grid-auto-columns: 100%;
+    }
+
+    .truck-image {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .trucks-section {
+      padding: 4rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .carousel-controls {
+      gap: 2rem;
+    }
+
+    .truck-card {
+      border-radius: 0.5rem;
+    }
+
+    .truck-info {
+      padding: 1.5rem;
+    }
+
+    .truck-image {
+      height: 250px;
+    }
+  }
+</style>

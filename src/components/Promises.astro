@@ -1,0 +1,227 @@
+---
+---
+
+<section id="services" class="promises-section">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <p class="section-label">OUR COMMITMENT</p>
+      <h2>Built on These Promises</h2>
+      <p class="section-description">
+        Every UD truck is engineered to exceed expectations and deliver maximum value to your business.
+      </p>
+    </div>
+
+    <div class="promises-grid">
+      <!-- Promise 1: Fuel Efficiency -->
+      <div class="promise-card" data-animate>
+        <div class="promise-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 12h12M12 6v12M9 9l6-6M9 15l6 6"/>
+          </svg>
+        </div>
+        <h3>Fuel Efficiency</h3>
+        <p>
+          Advanced engine technology reduces fuel consumption by up to 15%, 
+          delivering better mileage and lower operational costs.
+        </p>
+      </div>
+
+      <!-- Promise 2: Lower Maintenance -->
+      <div class="promise-card" data-animate>
+        <div class="promise-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+        <h3>Lower Maintenance</h3>
+        <p>
+          Durable components and smart engineering mean less downtime and 
+          reduced maintenance costs throughout the vehicle's lifecycle.
+        </p>
+      </div>
+
+      <!-- Promise 3: Guaranteed Uptime -->
+      <div class="promise-card" data-animate>
+        <div class="promise-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h3>Guaranteed Uptime</h3>
+        <p>
+          Reliable performance when you need it most. Our robust design ensures 
+          minimal downtime and maximum productivity for your fleet.
+        </p>
+      </div>
+
+      <!-- Promise 4: Higher Productivity -->
+      <div class="promise-card" data-animate>
+        <div class="promise-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M9 9h6v6H9z"/>
+          </svg>
+        </div>
+        <h3>Higher Productivity</h3>
+        <p>
+          Optimized performance metrics deliver more output per trip, 
+          helping you maximize revenue and minimize costs.
+        </p>
+      </div>
+
+      <!-- Promise 5: Connectivity -->
+      <div class="promise-card" data-animate>
+        <div class="promise-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9m8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0m-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/>
+          </svg>
+        </div>
+        <h3>Smart Connectivity</h3>
+        <p>
+          Real-time monitoring, predictive maintenance alerts, and fleet management 
+          integration for smarter decision-making.
+        </p>
+      </div>
+
+      <!-- Promise 6: Sustainable Solutions -->
+      <div class="promise-card" data-animate>
+        <div class="promise-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11z"/>
+          </svg>
+        </div>
+        <h3>Sustainable Solutions</h3>
+        <p>
+          Environmentally responsible engineering reduces emissions while 
+          maintaining superior performance and reliability.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .promises-section {
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    position: relative;
+  }
+
+  .promises-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+  }
+
+  .promises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .promise-card {
+    background: rgba(45, 45, 45, 0.4);
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .promise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .promise-card:hover {
+    border-color: var(--accent);
+    background: rgba(45, 45, 45, 0.6);
+    transform: translateY(-10px);
+  }
+
+  .promise-card:hover::before {
+    opacity: 1;
+  }
+
+  .promise-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .promise-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--accent);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .promise-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-family: var(--font-serif);
+  }
+
+  .promise-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .promises-section {
+      padding: 4rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .promises-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .promise-card {
+      padding: 1.5rem;
+    }
+
+    .promise-card h3 {
+      font-size: 1.25rem;
+    }
+  }
+</style>
